@@ -10,4 +10,3 @@ class Book(Base):
     name = Column(String, nullable=False)
     author = Column(String, nullable=False)
     release_year = Column(Integer, nullable=False)
-
