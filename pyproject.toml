@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "app"
+version = "0.1.0"
+description = ""
+authors = ["Rikki Hodder <rikkih@protonmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.65.2"
+SQLAlchemy = "^1.4.17"
+psycopg2-binary = "^2.8.6"
+uvicorn = "^0.14.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+mypy = "^0.901"
+sqlalchemy-stubs = "^0.4"
+flake8 = "^3.9.2"
+autoflake = "^1.4"
+isort = "^5.8.0"
+black = "^21.5b2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
