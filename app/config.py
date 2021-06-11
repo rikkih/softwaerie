@@ -19,5 +19,19 @@ class Settings(BaseSettings):
     ) -> Any:
         if isinstance(v, str):
             return v
-        return PostgresDsn.Build(pass)
+        return PostgresDsn.build(
+            scheme="postgresql",
+            user=values.get("POSTGRES_USER"),
+            password=values.get("POSTGRES_PASSWORD"),
+            host=values.get("POSTGRES_SERVER"),
+            path=f"/{values.get('POSTGRES_DB') or ''}"
+        )
+
+
+    class Config:
+        case_sensitive = True
+        env_file = ".env"
+
+
+settings = Settings()
 
